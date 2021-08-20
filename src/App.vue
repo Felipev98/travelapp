@@ -5,8 +5,9 @@
 </template>
 
 <style lang="scss">
-@import 'styles/custom.scss';
+@import "./assets/custom.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 body{
-  background-color:black;
+  background-color:#082032;
 }
 </style>
