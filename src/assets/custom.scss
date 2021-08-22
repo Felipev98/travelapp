@@ -7,7 +7,6 @@ $rojo: #ce679b;
 $primary: #FF4C29;
 $blanco: white;
 $background1:#082032;
-
 .btn{
     border-radius: 1.5rem;
     padding: 0.8rem;
@@ -15,3 +14,17 @@ $background1:#082032;
     box-shadow: 0 10px 25px #FF4C29;
     color: $blanco;
 }
+
+.circulo-pequeño{
+    width: 3rem;
+    height: 3rem;
+    background: $primary;
+    border-radius: 50%;
+    position: absolute;
+    left: 54rem;
+    z-index: 20;
+    top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
