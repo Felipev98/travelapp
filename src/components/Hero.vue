@@ -1,6 +1,7 @@
 <template>
   <div>
-      <div class="container">
+    <section class="hero">
+  <div class="container">
 <div class="row">
           <div class="col-6">
               <div class="texto-banner">
@@ -15,7 +16,7 @@
                     </div>
                     <div class="mensaje">
                         <div class="imagen"></div>
-                        <span>Andrea fernandez</span>
+                        <span class="text-imagen">Andrea fernandez</span>
                        <span>¡He conseguido todo lo que necesitaba graciaa esta app! 😍😍😍😍</span>
                     </div>
                     <div class="circulo">
@@ -29,6 +30,8 @@
                 </div>
             </div>
         </div>
+    </section>
+
       </div>      
 </template>
 
@@ -38,7 +41,10 @@ export default {
 }
 </script>
 
-<style>
+<style >
+.hero{
+  height: 43rem;
+}
 .margin{
     margin-top: 13rem;
 }
@@ -98,6 +104,9 @@ background: rgba(255, 255, 255, .7);
   background-size: cover;
   background-position: center;
   display: inline-block;
+  position:absolute;
+  top:-2rem;
+  border:1px solid green;
 }
 .circulo-abajo{
   width: 3rem;
@@ -114,5 +123,8 @@ background: rgba(255, 255, 255, .7);
 }
 .circulo-abajo img{
     width: 1.3rem;
+}
+.text-imagen{
+  display: block;
 }
 </style>
