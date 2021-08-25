@@ -58,5 +58,12 @@ export default {
 }
 .logo h2{
     font-size: 1rem;
+    color: #E6E4E4;
+}
+.logo h1{
+        color: white;
+}
+.logo span{
+    color:#A8A5A5;
 }
 </style>

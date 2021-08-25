@@ -5,7 +5,7 @@
 <div class="row">
           <div class="col-6">
               <div class="texto-banner">
-            <h2>Conoce tu nuevo destino</h2>
+            <h2>Conoce tu nuevo <span class="destino-hero">destino</span></h2>
               <p>Descubre las características y ventajas de tu próxima aventura</p>
               </div>
               <button class="btn btn-primary" id="boton-hero">Ver destinos</button>
@@ -42,6 +42,10 @@ export default {
 </script>
 
 <style >
+.destino-hero{
+  font-weight: 800;
+  color: #FF4C29;
+}
 .hero{
   height: 43rem;
 }
@@ -49,7 +53,7 @@ export default {
     margin-top: 13rem;
 }
 .texto-banner h2{
-    font-size:3.475rem;
+    font-size:3rem;
     color: white;
     font-weight: 700;
     width: 42rem;
@@ -126,5 +130,16 @@ background: rgba(255, 255, 255, .7);
 }
 .text-imagen{
   display: block;
+  font-size: 0.9rem;
+}
+.texto-nosotros h2{
+  color: #ECECEC;
+  font-weight:700;
+  font-size: 4.3rem;
+}
+.texto-destinos h2{
+  font-size: 4.3rem;
+  font-weight: 700;
+  color: #ECECEC;
 }
 </style>
