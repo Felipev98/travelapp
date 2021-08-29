@@ -21,7 +21,7 @@
           </div>
       <div class="container">
           <div class="row">
-              <div class="col-6">
+              <div class="col-xl-6">
                   <div class="texto-nosotros">
                       <h2>NOSOTROS</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur dunt, unc malesuada.</p>
@@ -29,7 +29,7 @@
                   </div>
                   <div class="nosotros-beneficios">
                       <div class="row">
-                          <div class="col-6" id="col-la">
+                          <div class="col-xl-6" id="col-la">
                               <i class="bi bi-heart-fill"></i>
                               <span class="beneficios-block">corajon</span>
                               <div class="texto-2">
@@ -37,7 +37,7 @@
                             <span class="beneficios-block">corajon</span>
                               </div>
                           </div>
-                          <div class="col-6">
+                          <div class="col-xl-6">
                             <i class="bi bi-hand-thumbs-up-fill"></i>                              
                             <span>corajon</span>
                              <div class="texto-2">
@@ -49,19 +49,19 @@
                       
               </div>
                   </div>                  
-              <div class="col-6">
+              <div class="col-xl-6">
                   <div class="imagen-horizonte">
                       <img src="../assets/hombre-horizonte.png" alt="horizonte.png">
                   </div>
                 <div class="tarjeta">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-xl-6">
                             <div class="texto-tarjeta">
                                 <h2>Satisfacción</h2>
                                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis orci at congue condimentum</span>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-xl-6">
                             <div class="estrellas">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>

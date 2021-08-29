@@ -3,14 +3,14 @@
     <section class="hero">
   <div class="container">
 <div class="row">
-          <div class="col-6">
+          <div class="col-xl-6">
               <div class="texto-banner">
             <h2>Conoce tu nuevo <span class="destino-hero">destino</span></h2>
               <p>Descubre las características y ventajas de tu próxima aventura</p>
               </div>
               <button class="btn btn-primary" id="boton-hero">Ver destinos</button>
           </div>
-                <div class="col-6">
+                <div class="col-xl-6">
                     <div class="circulo-pequeño">
                         <img src="../assets/calendario.png" alt="calendario">
                     </div>
@@ -141,5 +141,40 @@ background: rgba(255, 255, 255, .7);
   font-size: 4.3rem;
   font-weight: 700;
   color: #ECECEC;
+}
+/* Media Queries */
+@media screen and (max-width:700px){
+.elipse-down{
+  display: none;
+}
+.elipse-nosotros-down{
+  display: none;
+}
+.elipse-destinos-down{
+  display: none;
+}
+.texto-banner{
+  margin-top: 7rem;
+}
+.boton-hero{
+  width: 40%;
+}
+.mensaje{
+  top: 43rem;
+    left: 3rem;
+}
+div.circulo-pequeño{
+  left: 15rem;
+  top: 27rem;
+}
+#boton-hero{
+  width: 40%;
+}
+.circulo{
+  margin-left: 0;
+}
+.texto-banner h2{
+  width: 27rem;
+}
 }
 </style>
