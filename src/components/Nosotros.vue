@@ -23,7 +23,7 @@
           <div class="row">
               <div class="col-xl-6">
                   <div class="texto-nosotros">
-                      <h2>NOSOTROS</h2>
+                      <h2>{{titulo}}</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur dunt, unc malesuada.</p>
                       <p>Nos dedicamos a:</p>
                   </div>
@@ -84,7 +84,11 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            titulo:'Nosotros'
+        }
+    },
 }
 </script>
 

@@ -5,15 +5,11 @@
               <div class="row">
                   <div class="col-6">
                       <div class="texto-destinos">
-                          <h2>DESTINOS</h2>
-                          <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis ullamcorper varius purus sit amet interdum. Phasellus placerat metus a urna consequat porta</span>
-                          <input v-model="pais" class="input-destinos" type="text" placeholder="Buscar país">
-                          <button @click="getcountry" >Aquí</button>
+                          <h2>{{titulo1}}</h2>
+                          <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis ullamcorper varius purus sit amet interdum. Phasellus placerat metus a urna consequat porta</span>         
                       </div>
-                      <div v-for="infos in info" :key="infos.id">
-                          <p>{{infos.name}}</p>
-                          
-                          <!-- <span>{{infos.neighbors}}</span> -->
+                      <div class="boton">
+                      <router-link to="/paises" ><button>{{boton}}</button></router-link>
                       </div>
                   </div>
                 <div class="col-6">
@@ -81,23 +77,13 @@
 </template>
 
 <script>
-import axios from "axios"
 export default {
-    data() {
-        return {
-            pais:'',
-            info:null
-        }
-    },
-    methods:{
-        async getcountry(){
-            let paises = this.pais
-            let datos = await axios.get(`https://travelbriefing.org/${paises}?format=json`)
-            console.log(datos)
-            this.info = datos.data
-
-        }
+data() {
+    return {
+        boton: 'Ver destinos',
+        titulo1: 'Destinos',
     }
+},
 }
 </script>
 
@@ -109,17 +95,7 @@ export default {
     color: white;
     margin-top: 7rem;
 }
-.input-destinos{
-    display: block;
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-    opacity: 81%;
-    width: 19rem;
-    background: #334756;
-}
+
 .tarjeta-destino{
     background: #334756;
     height: 13rem;
@@ -156,4 +132,20 @@ export default {
     box-shadow: 0px 10px 30px black;
     margin-top: 2rem;
 }
+.boton{
+        width: 96%;
+    text-align: center;
+    margin-top: 1rem;
+}
+.boton button{
+    border-radius: 1.5rem;
+    padding: 0.8rem;
+    width: 30%;
+    background: #FF4C29;
+    box-shadow: 0 10px 25px #ff4c29;
+    border: none;
+    color: #ffff;
+    transition: all 0.3s ease-in-out;
+}
+
 </style>
