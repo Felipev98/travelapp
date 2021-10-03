@@ -7,9 +7,14 @@
                       <div class="texto-destinos">
                           <h2>DESTINOS</h2>
                           <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis ullamcorper varius purus sit amet interdum. Phasellus placerat metus a urna consequat porta</span>
-                          <input class="input-destinos" type="text" placeholder="Buscar país">
+                          <input v-model="pais" class="input-destinos" type="text" placeholder="Buscar país">
+                          <button @click="getcountry" >Aquí</button>
                       </div>
-                      
+                      <div v-for="infos in info" :key="infos.id">
+                          <p>{{infos.name}}</p>
+                          
+                          <!-- <span>{{infos.neighbors}}</span> -->
+                      </div>
                   </div>
                 <div class="col-6">
                     <div class="row">
@@ -76,8 +81,23 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
+    data() {
+        return {
+            pais:'',
+            info:null
+        }
+    },
+    methods:{
+        async getcountry(){
+            let paises = this.pais
+            let datos = await axios.get(`https://travelbriefing.org/${paises}?format=json`)
+            console.log(datos)
+            this.info = datos.data
 
+        }
+    }
 }
 </script>
 
