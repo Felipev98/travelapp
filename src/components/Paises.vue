@@ -30,10 +30,67 @@
                             </div>
                             </div>
                             </div>
+                            <div class="col-6">
+                            <div class="info">
+                            <i class="bi bi-chat"></i>
+                            <span>Language</span>
+                            <p>{{language}}</p>
                             </div>
+                            </div> 
+                            </div>
+                             <div class="row">
+                                 <div class="col-6">
+                            <div class="info water">
+                            <i class="bi bi-water"></i>
+                            <span>Water</span>
+                               <p>Drinking water in {{name}} is {{water}}</p>
+                            </div>
+                            </div>
+                            <div class="col-6">
+                            <div class="info water">
+                                <p>Vaccinations and health</p>
+                                <div v-for="Vaccination in Vaccinations" :key="Vaccination.id">
+                            <span>{{Vaccination.name}}</span>
+                                </div>
+                            </div>
+                            </div> 
+                            </div>
+                             <div class="row">
+                                 <div class="col-6">
+                            <div class="info water">
+                            <i class="bi bi-water"></i>
+                            <span>TimeZone</span>
+                                {{TimeZone}}
+                            </div>
+                            </div>
+                            <div class="col-6">
+                            <div class="info water">
+                            <span>Telephone</span>
+                            <p>+ {{Telephone}}</p>
+                            </div>
+                            </div> 
+                            </div>
+                             <div class="row">
+                                 <div class="col-6">
+                            <div class="info water">
+                            <i class="bi bi-water"></i>
+                            <span>Visa requirements</span>
+                               <p>Drinking water in {{name}} is {{water}}</p>
+                            </div>
+                            </div>
+                            <div class="col-6">
+                            <div class="info water">
+                            <i class="bi bi-heart"></i>
+                            <span>Electricity</span>
+                            <div v-for="electricity in Electricity " :key="electricity.id">
+                                <!-- <span>{{Electricity[electricity]}}</span> -->
+                            </div>
+                            </div>
+                            </div> 
+                            </div>
+                        </div>         
               </div>
       </div>
-  </div>
   </div>
 </template>
 
@@ -47,7 +104,14 @@ data() {
             image:null,
             name:null,
             advise:null,
-            linkadvise:null
+            linkadvise:null,
+            language:null,
+            water:null,
+            Vaccinations:null,
+            TimeZone:null,
+            Telephone:null,
+            Visa:null,
+            Electricity:null
             
         }
     },
@@ -59,6 +123,12 @@ data() {
             this.name = datos.data.names.name
             this.advise = datos.data.advise.UA.advise
             this.linkadvise = datos.data.advise.UA.url
+            this.language = datos.data.language[0].language
+            this.water = datos.data.water.short
+            this.Vaccinations = datos.data.vaccinations
+            this.TimeZone = datos.data.timezone.name
+            this.Electricity = datos.data.electricity
+            this.Telephone = datos.data.telephone.calling_code
             this.image = JSON.stringify(datos.data.names.iso2.toLowerCase()).replace(/['"]+/g, '')
         }
     }
@@ -144,5 +214,7 @@ data() {
     border-radius:1.2rem;
     box-shadow: 0 10px 25px #FF4C29;
 }
-
+.info.water{
+    margin-top: 1rem;
+}
 </style>
