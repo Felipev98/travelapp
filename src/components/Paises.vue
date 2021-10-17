@@ -3,10 +3,13 @@
       <div class="container">
           <div class="row">
               <div class="col-12">
-            <input v-model="$v.pais.$model" class="input-destinos" type="text" placeholder="Buscar país">
+            <input v-model="$v.pais.$model" class="input-destinos" type="text" placeholder="Buscar país" @keyup.enter="getcountry">
             <!-- <small v-if="!$v.pais.required">Campo Reque</small> -->
             <div class="boton-buscar">
-            <button @click="getcountry" :disabled="$v.$invalid" >Buscar</button>
+            <button @click="getcountry" :disabled="$v.$invalid"  >Buscar</button>
+            </div>
+            <div class="spinner text-center">
+                <b-spinner v-if="spinner" variant="success"></b-spinner>
             </div>
               </div> 
           </div>
@@ -23,17 +26,19 @@
                              <div class="row">
                                  <div class="col-6">
                             <div class="info">
-                            <i class="bi bi-info-square"></i>
+                            <i class="bi bi-info-square-fill"></i>
                             <span>Travel advice</span>
                                <p>{{advise}}</p>
+                               <a :href="linkadvise">
                                <div class="boton-info">
                             <a :href="linkadvise">Ver</a>                                         
                             </div>
+                               </a>
                             </div>
                             </div>
                             <div class="col-6">
                             <div class="info">
-                            <i class="bi bi-chat"></i>
+                        <i class="bi bi-chat-fill"></i>
                             <span>Language</span>
                             <p>{{language}}</p>
                             </div>
@@ -44,13 +49,13 @@
                             <div class="info water">
                             <i class="bi bi-droplet-fill"></i>
                             <span>Water</span>
-                               <p>Drinking water in {{name}} is {{water}}</p>
+                               <p>Drinking water in {{name}} is <span id="texto" :class="{'error': error === 'not safe'}">{{water}}</span> </p>
                             </div>
                             </div>
                             <div class="col-6">
                             <div class="info water">
-                                <i class="bi bi-heart"></i>
-                                <span>Vaccinations and health</span>
+                            <i class="bi bi-heart-fill"></i>                                
+                            <span>Vaccinations and health</span>
                                 <div v-for="Vaccination in Vaccinations" :key="Vaccination.id">
                             <span>{{Vaccination.name}}</span>
                                 </div>
@@ -75,10 +80,12 @@
                             </div>
                              <div class="row">
                                  <div class="col-6">
-                            <div class="info water">
-                            <i class="bi bi-map"></i>
-                            <span>Visa requirements</span>
-                               <p>Drinking water in {{name}} is {{water}}</p>
+                            <div class="info water mb-4">
+                        <i class="bi bi-map-fill"></i>                            
+                        <span>Neighbors</span>
+                            <div v-for="neigh in neightboor" :key="neigh.id">
+                                <span>{{neigh.name}}</span>
+                            </div>
                             </div>
                             </div>
                             <div class="col-6">
@@ -86,7 +93,7 @@
                             <i class="bi bi-lightning-fill"></i>
                             <span>Electricity</span>
                             <div v-for="electricity in Electricity " :key="electricity.id">
-                                <!-- <span>{{Electricity[electricity]}}</span> -->
+                                <span>{{electricity}}</span>
                             </div>
                             </div>
                             </div> 
@@ -115,27 +122,49 @@ data() {
             TimeZone:null,
             Telephone:null,
             Visa:null,
-            Electricity:null
+            Electricity:null,
+            spinner:false,
+            error:null,
+            neightboor:true
             
         }
     },
     methods:{
         async getcountry(){
+            this.spinner = true
+            try{
             let paises = this.pais
             let datos = await axios.get(`https://travelbriefing.org/${paises}?format=json`)
             console.log(datos)
             this.name = datos.data.names.name
             this.advise = datos.data.advise.UA.advise
-            this.linkadvise = datos.data.advise.UA.url
+            this.linkadvise = datos.data.advise.CA.url
             this.language = datos.data.language[0].language
             this.water = datos.data.water.short
             this.Vaccinations = datos.data.vaccinations
             this.TimeZone = datos.data.timezone.name
             this.Electricity = datos.data.electricity
             this.Telephone = datos.data.telephone.calling_code
+            this.neightboor = datos.data.neighbors
             this.image = JSON.stringify(datos.data.names.iso2.toLowerCase()).replace(/['"]+/g, '')
+            // console.log(error)
+            
+            }catch(error){
+                console.log(error)
+            }finally{
+                this.spinner = false
+            }
+           
+        },
+        computed:{
+            errores(){
+        this.error = document.querySelector("#texto").innerText;
+            }
         }
     },
+            created() {
+            this.getcountry()
+        },
     validations: {
     pais: {
       required,
@@ -223,7 +252,16 @@ data() {
     border-radius:1.2rem;
     box-shadow: 0 10px 25px #FF4C29;
 }
+a{
+    text-decoration: none;
+}
 .info.water{
     margin-top: 1rem;
+}
+.error{
+    color: red !important;
+}
+.noerror{
+    color: green !important;
 }
 </style>
