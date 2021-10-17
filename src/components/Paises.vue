@@ -3,9 +3,10 @@
       <div class="container">
           <div class="row">
               <div class="col-12">
-            <input v-model="pais" class="input-destinos" type="text" placeholder="Buscar país">
+            <input v-model="$v.pais.$model" class="input-destinos" type="text" placeholder="Buscar país">
+            <!-- <small v-if="!$v.pais.required">Campo Reque</small> -->
             <div class="boton-buscar">
-            <button @click="getcountry" >Buscar</button>
+            <button @click="getcountry" :disabled="$v.$invalid" >Buscar</button>
             </div>
               </div> 
           </div>
@@ -41,14 +42,15 @@
                              <div class="row">
                                  <div class="col-6">
                             <div class="info water">
-                            <i class="bi bi-water"></i>
+                            <i class="bi bi-droplet-fill"></i>
                             <span>Water</span>
                                <p>Drinking water in {{name}} is {{water}}</p>
                             </div>
                             </div>
                             <div class="col-6">
                             <div class="info water">
-                                <p>Vaccinations and health</p>
+                                <i class="bi bi-heart"></i>
+                                <span>Vaccinations and health</span>
                                 <div v-for="Vaccination in Vaccinations" :key="Vaccination.id">
                             <span>{{Vaccination.name}}</span>
                                 </div>
@@ -58,13 +60,14 @@
                              <div class="row">
                                  <div class="col-6">
                             <div class="info water">
-                            <i class="bi bi-water"></i>
+                            <i class="bi bi-watch"></i>
                             <span>TimeZone</span>
                                 {{TimeZone}}
                             </div>
                             </div>
                             <div class="col-6">
                             <div class="info water">
+                            <i class="bi bi-telephone-fill"></i>
                             <span>Telephone</span>
                             <p>+ {{Telephone}}</p>
                             </div>
@@ -73,14 +76,14 @@
                              <div class="row">
                                  <div class="col-6">
                             <div class="info water">
-                            <i class="bi bi-water"></i>
+                            <i class="bi bi-map"></i>
                             <span>Visa requirements</span>
                                <p>Drinking water in {{name}} is {{water}}</p>
                             </div>
                             </div>
                             <div class="col-6">
                             <div class="info water">
-                            <i class="bi bi-heart"></i>
+                            <i class="bi bi-lightning-fill"></i>
                             <span>Electricity</span>
                             <div v-for="electricity in Electricity " :key="electricity.id">
                                 <!-- <span>{{Electricity[electricity]}}</span> -->
@@ -96,6 +99,7 @@
 
 <script>
 import axios from "axios"
+import { required } from 'vuelidate/lib/validators'
 export default {
 data() {
         return {
@@ -131,6 +135,11 @@ data() {
             this.Telephone = datos.data.telephone.calling_code
             this.image = JSON.stringify(datos.data.names.iso2.toLowerCase()).replace(/['"]+/g, '')
         }
+    },
+    validations: {
+    pais: {
+      required,
+    },
     }
 }
 </script>
