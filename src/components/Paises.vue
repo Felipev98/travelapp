@@ -14,9 +14,9 @@
               </div> 
           </div>
           <div class="row">
-                    <div class="col-6">
+                    <div class="col-6" v-if="">
                      <div class="titulo-pais">
-                      <h2>{{name}}</h2>
+                      <h2>{{info.names.name}}</h2>
                   </div>
                       <div class="imagen--">
                           <img :src="`https://travelbriefing.org/sites/views/default/images/flags/4x3/${image}.svg`" alt="">
@@ -28,10 +28,10 @@
                             <div class="info">
                             <i class="bi bi-info-square-fill"></i>
                             <span>Travel advice</span>
-                               <p>{{advise}}</p>
-                               <a :href="linkadvise">
+                               <p>{{info.advise.UA.advise}}</p>
+                               <a :href="info.advise.CA.url">
                                <div class="boton-info">
-                            <a :href="linkadvise">Ver</a>                                         
+                            <a :href="info.advise.CA.url">Ver</a>                                         
                             </div>
                                </a>
                             </div>
@@ -40,7 +40,7 @@
                             <div class="info">
                         <i class="bi bi-chat-fill"></i>
                             <span>Language</span>
-                            <p>{{language}}</p>
+                            <p>{{info.language[0].language}}</p>
                             </div>
                             </div> 
                             </div>
@@ -49,7 +49,7 @@
                             <div class="info water">
                             <i class="bi bi-droplet-fill"></i>
                             <span>Water</span>
-                               <p>Drinking water in {{name}} is <span id="texto" :class="{'error': error === 'not safe'}">{{water}}</span> </p>
+                               <p>Drinking water in {{info.names.name}} is <span id="texto">{{info.water.short}}</span> </p>
                             </div>
                             </div>
                             <div class="col-6">
@@ -67,14 +67,14 @@
                             <div class="info water">
                             <i class="bi bi-watch"></i>
                             <span>TimeZone</span>
-                                {{TimeZone}}
+                                {{info.timezone.name}}
                             </div>
                             </div>
                             <div class="col-6">
                             <div class="info water">
                             <i class="bi bi-telephone-fill"></i>
                             <span>Telephone</span>
-                            <p>+ {{Telephone}}</p>
+                            <p>+ {{info.telephone.calling_code}}</p>
                             </div>
                             </div> 
                             </div>
@@ -113,18 +113,10 @@ data() {
             pais:'',
             info:null,
             image:null,
-            name:null,
-            advise:null,
-            linkadvise:null,
-            language:null,
-            water:null,
             Vaccinations:null,
-            TimeZone:null,
-            Telephone:null,
-            Visa:null,
             Electricity:null,
             spinner:false,
-            error:null,
+            error:false,
             neightboor:true
             
         }
@@ -136,15 +128,9 @@ data() {
             let paises = this.pais
             let datos = await axios.get(`https://travelbriefing.org/${paises}?format=json`)
             console.log(datos)
-            this.name = datos.data.names.name
-            this.advise = datos.data.advise.UA.advise
-            this.linkadvise = datos.data.advise.CA.url
-            this.language = datos.data.language[0].language
-            this.water = datos.data.water.short
-            this.Vaccinations = datos.data.vaccinations
-            this.TimeZone = datos.data.timezone.name
+            this.info = datos.data
+            this.Vaccinations = datos.data.vaccinations            
             this.Electricity = datos.data.electricity
-            this.Telephone = datos.data.telephone.calling_code
             this.neightboor = datos.data.neighbors
             this.image = JSON.stringify(datos.data.names.iso2.toLowerCase()).replace(/['"]+/g, '')
             // console.log(error)
@@ -156,11 +142,6 @@ data() {
             }
            
         },
-        computed:{
-            errores(){
-        this.error = document.querySelector("#texto").innerText;
-            }
-        }
     },
             created() {
             this.getcountry()
