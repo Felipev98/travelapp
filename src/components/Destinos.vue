@@ -3,7 +3,7 @@
       <section class="main2">
           <div class="container">
               <div class="row">
-                  <div class="col-6">
+                  <div class="col-xl-6">
                       <div class="texto-destinos">
                           <h2>{{titulo1}}</h2>
                           <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis ullamcorper varius purus sit amet interdum. Phasellus placerat metus a urna consequat porta</span>         
@@ -12,9 +12,9 @@
                       <router-link to="/paises" ><button>{{boton}}</button></router-link>
                       </div>
                   </div>
-                <div class="col-6">
+                <div class="col-xl-6">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-xl-6">
                             <div class="tarjeta-destino">
                                 <div class="numero">
                                     <h2>1</h2>
@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                         </div>
-                         <div class="col-6">
+                         <div class="col-xl-6">
                             <div class="tarjeta-destino">
                                 <div class="numero">
                                     <h2>2</h2>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                      <div class="row">
-                        <div class="col-6">
+                        <div class="col-xl-6">
                             <div class="tarjeta-destino2">
                                 <div class="numero">
                                     <h2>3</h2>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         </div>
-                         <div class="col-6">
+                         <div class="col-xl-6">
                             <div class="tarjeta-destino2">
                                 <div class="numero">
                                     <h2>4</h2>
@@ -146,6 +146,37 @@ data() {
     border: none;
     color: #ffff;
     transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width:700px){
+    .texto-destinos{
+        text-align: center;
+        }
+        .texto-destinos h2{
+            font-size: 3rem;
+            text-align: center;
+        }
+        .tarjeta-destino{
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        .numero h2{
+            margin: auto;
+            width: 4rem;
+            height: 4rem;
+        }
+    .tarjeta-destino2{
+        text-align: center;
+    }
+    .boton{
+        width: 100%;
+    }
+    .boton button{
+        width: 51%;
+    }
+    .main2{
+        height: 95rem;
+    }
 }
 
 </style>

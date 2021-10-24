@@ -7,9 +7,9 @@
     <b-navbar-brand id="logo" href="#">LOGO</b-navbar-brand>
         <b-collapse id="nav-collapse" class="justify-content-end" is-nav>
         <b-navbar-nav >
-        <b-nav-item href="#InicioSección">Inicio</b-nav-item>
-        <b-nav-item href="#Youtube" >Youtube</b-nav-item>
-        <b-nav-item class="destinos" id="destinos">Destinos</b-nav-item>
+          <router-link to="/" class="destinos" >Inicio</router-link>
+        <b-nav-item href="#Nosotros" >Nosotros</b-nav-item>
+    <router-link to="/paises" class="destinos" >Destinos</router-link>
       </b-navbar-nav>
           </b-collapse>
       </b-container>
@@ -35,8 +35,15 @@ export default {
 .navbar-light .navbar-nav .nav-link{
   color: white;
 }
-#destinos a{
+.destinos{
+  text-decoration: none;
+  padding-top: 0.5rem;
+  color: #ffff;
+}
+.destinos:last-child{
   color: #FF4C29;
   font-weight: 700;
+
 }
+
 </style>

@@ -143,9 +143,13 @@ background: rgba(255, 255, 255, .7);
   color: #ECECEC;
 }
 /* Media Queries */
+
 @media screen and (max-width:700px){
 .elipse-down{
   display: none;
+}
+.hero{
+  height: 100vh;
 }
 .elipse-nosotros-down{
   display: none;
@@ -172,9 +176,77 @@ div.circulo-pequeño{
 }
 .circulo{
   margin-left: 0;
+  width: 350px;
+height: 350px;
 }
 .texto-banner h2{
-  width: 27rem;
+  width: 100%;
+}
+.texto-banner p{
+  width: 100%;
+}
+.imagen-banner{
+      height: 22rem;
+    width: 22rem;
+}
+.mensaje {
+    top: 41rem;
+    left: 2rem;
+}
+.circulo-abajo{
+  left: 6rem;
+  top: 20rem;
+}
+.texto-nosotros{
+  text-align: center;
+  margin-top: 9rem;
+}
+.texto-nosotros h2{
+  font-size: 3rem;
+}
+.imagen-horizonte{
+  padding-top: 3rem;
+}
+  .elipse-top{
+  width: 27rem !important;
+}
+.imagen-banner{
+  margin-top: 2rem;
+}
+.mensaje{
+  top: 32rem;
+}
+div.circulo-pequeño{
+  top: 22rem;
+}
+}
+@media screen and (min-width:320px) and (max-width:360px){
+.texto-banner p{
+  font-size: 00.9rem;
+}
+.texto-banner h2{
+  font-size: 2.1rem;
+}
+#boton-hero{
+  width: 54%;
+}
+.elipse-top{
+    display: none;
+}
+.imagen-banner {
+    height: 17.5rem;
+    width: 17rem;
+}
+.circulo {
+    width: 280px;
+    height: 280px;
+}
+.circulo-abajo {
+    left: 6rem;
+    top: 17rem;
+}
+.mensaje {
+    top: 30rem;
 }
 }
 </style>

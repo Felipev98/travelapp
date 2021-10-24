@@ -1,6 +1,5 @@
 <template>
   <div>
-<Navbar/>      
 <Paises/>
 <Footer/>
   </div>

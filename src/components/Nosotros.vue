@@ -1,6 +1,6 @@
 <template>
   <div>
-      <section class="nosotros">
+      <section class="nosotros" id="Nosotros">
           <div class="elipse-top">
               <img src="../assets/Elipse.png" alt="3">
           </div>
@@ -53,7 +53,8 @@
                   <div class="imagen-horizonte">
                       <img src="../assets/hombre-horizonte.png" alt="horizonte.png">
                   </div>
-                <div class="tarjeta">
+                  <div class="tarjeta-f">
+  <div class="tarjeta">
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="texto-tarjeta">
@@ -75,6 +76,8 @@
                         </div>
                     </div>
                 </div>
+                  </div>
+              
               </div>
           </div>
       </div>
@@ -201,5 +204,48 @@ width: 13rem;
 }
 .elipse-destinos-down img{
     width: 20rem;
+}
+@media screen and (max-width:700px){
+    .imagen-horizonte img{
+  width: 100% ;
+}
+.tarjeta-f{
+  width: 100% ;
+}
+.tarjeta{
+  width: 86% ;
+  height: 11rem ; 
+}
+.smile-face{
+  text-align: right;
+  position: relative;;
+  top: -8rem ;
+}
+.nosotros{
+  height: 114vh;
+}
+.imagen-banner {
+    height: 17.5rem;
+    width: 17rem;
+}
+.circulo{
+    width: 280px;
+    height: 280px;
+
+}
+.text-image span{
+    font-size: 0.8rem;
+}
+.texto-nosotros p{
+    font-size: 0.9rem;
+}
+}
+@media screen and (min-width:320px) and (max-width:360px){
+.nosotros {
+    height: 142vh;
+}
+.mensaje{
+    width: 15rem;
+}
 }
 </style>

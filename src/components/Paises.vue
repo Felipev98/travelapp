@@ -1,10 +1,17 @@
 <template>
   <div>
+      <div class="full-height" id="banner">
+  <b-navbar toggleable="lg" >
+      <b-container>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-brand id="logo" to="/">LOGO</b-navbar-brand>
+      </b-container>
+        </b-navbar>
+        </div>
       <div class="container">
           <div class="row">
               <div class="col-12">
-            <input v-model="$v.pais.$model" class="input-destinos" type="text" placeholder="Buscar país" @keyup.enter="getcountry">
-            <!-- <small v-if="!$v.pais.required">Campo Reque</small> -->
+            <input v-model.trim="$v.pais.$model" class="input-destinos" type="text" placeholder="Buscar país" @keyup.enter="getcountry">
             <div class="boton-buscar">
             <button @click="getcountry" :disabled="$v.$invalid"  >Buscar</button>
             </div>
@@ -14,7 +21,7 @@
               </div> 
           </div>
           <div class="row">
-                    <div class="col-6" v-if="">
+                    <div class="col-xl-6">
                      <div class="titulo-pais">
                       <h2>{{info.names.name}}</h2>
                   </div>
@@ -22,9 +29,9 @@
                           <img :src="`https://travelbriefing.org/sites/views/default/images/flags/4x3/${image}.svg`" alt="">
                       </div>
                     </div>
-                     <div class="col-6" id="colum-2">
+                     <div class="col-xl-6" id="colum-2">
                              <div class="row">
-                                 <div class="col-6">
+                                 <div class="col-xl-6">
                             <div class="info">
                             <i class="bi bi-info-square-fill"></i>
                             <span>Travel advice</span>
@@ -36,7 +43,7 @@
                                </a>
                             </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-xl-6">
                             <div class="info">
                         <i class="bi bi-chat-fill"></i>
                             <span>Language</span>
@@ -45,14 +52,14 @@
                             </div> 
                             </div>
                              <div class="row">
-                                 <div class="col-6">
+                                 <div class="col-xl-6">
                             <div class="info water">
                             <i class="bi bi-droplet-fill"></i>
                             <span>Water</span>
                                <p>Drinking water in {{info.names.name}} is <span id="texto">{{info.water.short}}</span> </p>
                             </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-xl-6">
                             <div class="info water">
                             <i class="bi bi-heart-fill"></i>                                
                             <span>Vaccinations and health</span>
@@ -63,14 +70,14 @@
                             </div> 
                             </div>
                              <div class="row">
-                                 <div class="col-6">
+                                 <div class="col-xl-6">
                             <div class="info water">
                             <i class="bi bi-watch"></i>
                             <span>TimeZone</span>
                                 {{info.timezone.name}}
                             </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-xl-6">
                             <div class="info water">
                             <i class="bi bi-telephone-fill"></i>
                             <span>Telephone</span>
@@ -79,7 +86,7 @@
                             </div> 
                             </div>
                              <div class="row">
-                                 <div class="col-6">
+                                 <div class="col-xl-6">
                             <div class="info water mb-4">
                         <i class="bi bi-map-fill"></i>                            
                         <span>Neighbors</span>
@@ -88,7 +95,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-xl-6">
                             <div class="info water">
                             <i class="bi bi-lightning-fill"></i>
                             <span>Electricity</span>
@@ -127,7 +134,6 @@ data() {
             try{
             let paises = this.pais
             let datos = await axios.get(`https://travelbriefing.org/${paises}?format=json`)
-            console.log(datos)
             this.info = datos.data
             this.Vaccinations = datos.data.vaccinations            
             this.Electricity = datos.data.electricity
@@ -143,6 +149,7 @@ data() {
            
         },
     },
+    
             created() {
             this.getcountry()
         },
@@ -164,8 +171,9 @@ data() {
     opacity: 81%;
     width: 19rem;
     background: #334756;
-        margin: auto;
+    margin: auto;
     width: 80%;
+    color: #ffff;
     margin-top: 2rem;
 }
 .titulo-pais{
@@ -189,6 +197,7 @@ data() {
     background: #31495B;
     padding: 1rem;
     border-radius: 0.9rem;
+    color: #ffff;
 }
 .info p {
     color: #ffff;
@@ -239,10 +248,30 @@ a{
 .info.water{
     margin-top: 1rem;
 }
-.error{
-    color: red !important;
+#logo{
+  color: white;
+  font-size: 1.2rem;
 }
-.noerror{
-    color: green !important;
+@media screen and (max-width:700px){
+    .imagen-- img {
+    width: 100%;
+}
+.titulo-pais{
+    text-align: center;
+}
+.info{
+    margin-top: 1rem;
+}
+#colum-2 {
+    margin-top: 2rem;
+}
+.info{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.info-water{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 }
 </style>

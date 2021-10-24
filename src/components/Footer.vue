@@ -66,4 +66,16 @@ export default {
 .logo span{
     color:#A8A5A5;
 }
+@media screen and (max-width:700px){
+    .footer{
+        height: 28rem;
+        text-align: center;
+    }
+    .logo{
+        margin-top: 2rem;
+    }
+    .texto-banner{
+        margin-top: 2rem;
+    }
+}
 </style>
