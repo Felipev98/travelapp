@@ -1,7 +1,7 @@
 <template>
   <div>
 <div class="full-height" id="banner">
-  <b-navbar toggleable="lg" >
+  <b-navbar toggleable="lg" class="navbar-dark" >
       <b-container>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-navbar-brand id="logo" href="#">LOGO</b-navbar-brand>

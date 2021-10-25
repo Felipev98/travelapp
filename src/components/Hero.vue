@@ -8,7 +8,7 @@
             <h2>Conoce tu nuevo <span class="destino-hero">destino</span></h2>
               <p>Descubre las características y ventajas de tu próxima aventura</p>
               </div>
-              <button class="btn btn-primary" id="boton-hero">Ver destinos</button>
+            <a href="#Destinos"><button class="btn btn-primary"  id="boton-hero">Ver destinos</button></a> 
           </div>
                 <div class="col-xl-6">
                     <div class="circulo-pequeño">
@@ -17,7 +17,7 @@
                     <div class="mensaje">
                         <div class="imagen"></div>
                         <span class="text-imagen">Andrea fernandez</span>
-                       <span>¡He conseguido todo lo que necesitaba graciaa esta app! 😍😍😍😍</span>
+                       <span>¡He conseguido todo lo que necesitaba gracias a esta app! 😍😍😍😍</span>
                     </div>
                     <div class="circulo">
                         <div class="circulo-abajo">
@@ -82,23 +82,27 @@ export default {
   width: 25rem;
   background-size: cover;
   background-position: center;
-  margin-top: 4rem;
 }
 
 .mensaje{
-  position: absolute;
+  position: relative;
   padding: 1rem;
 background: rgba(255, 255, 255, .7);
 -webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-  top: 25rem;
-  left: 41rem;
+  top: 24rem;
+  left: -1rem;
   z-index: 99999;
   border-radius: 0.7rem;
   width: 20rem;
 }
 .circulo-pequeño img{
     width: 1.3rem;
+}
+div.circulo-pequeño{
+  position: relative;
+  top: 11rem;
+  left: 13rem;
 }
 .imagen{
   width: 3rem;
@@ -143,7 +147,49 @@ background: rgba(255, 255, 255, .7);
   color: #ECECEC;
 }
 /* Media Queries */
-
+@media screen and (min-width:701px) and (max-width:1024px){
+.mensaje {
+    top: 13rem;
+    left: 10rem;
+}
+div.circulo-pequeño {
+    top: 2rem;
+    left: 17rem;
+}
+  .circulo-abajo{
+    top: 22rem;
+  }
+  .elipse-down{
+    display: none;
+  }
+  .elipse-nosotros-down{
+    display: none;
+  }
+  .elipse-destinos-down{
+    display: none;
+  }
+  .texto-banner{
+    margin-top: 6rem;
+  }
+  .hero{
+    height: 90vh;
+  }
+  .elipse-top{
+    z-index: -1;
+  }
+  .navbar-nav{
+    background-color: #FF4C29;
+    padding: 0.8rem;
+  }
+  a.destinos{
+    color: #ffff !important;
+    font-weight: 400 !important;
+  }
+  .circulo{
+    margin-left: 12rem;
+    top: -9rem;
+  }
+}
 @media screen and (max-width:700px){
 .elipse-down{
   display: none;
@@ -163,21 +209,18 @@ background: rgba(255, 255, 255, .7);
 .boton-hero{
   width: 40%;
 }
-.mensaje{
-  top: 43rem;
-    left: 3rem;
-}
 div.circulo-pequeño{
   left: 15rem;
-  top: 27rem;
+  top: 4rem;
 }
 #boton-hero{
   width: 40%;
 }
 .circulo{
-  margin-left: 0;
+  margin-left: 36px;
   width: 350px;
 height: 350px;
+top: -9rem;
 }
 .texto-banner h2{
   width: 100%;
@@ -189,13 +232,10 @@ height: 350px;
       height: 22rem;
     width: 22rem;
 }
-.mensaje {
-    top: 41rem;
-    left: 2rem;
-}
+
 .circulo-abajo{
   left: 6rem;
-  top: 20rem;
+  top: 17rem;
 }
 .texto-nosotros{
   text-align: center;
@@ -209,17 +249,25 @@ height: 350px;
 }
   .elipse-top{
   width: 27rem !important;
+  z-index: -1;
 }
 .imagen-banner{
   margin-top: 2rem;
 }
-.mensaje{
-  top: 32rem;
+.mensaje {
+    top: 10rem;
+    left: 2rem;
 }
-div.circulo-pequeño{
-  top: 22rem;
+.navbar-nav{
+  background-color: #FF4C29;
+  padding: 0.8rem;
+}
+a.destinos{
+  color: #ffff !important;
+  font-weight: 400 !important;
 }
 }
+
 @media screen and (min-width:320px) and (max-width:360px){
 .texto-banner p{
   font-size: 00.9rem;
@@ -248,5 +296,10 @@ div.circulo-pequeño{
 .mensaje {
     top: 30rem;
 }
+}
+@media screen and (min-width:1024px) and (max-width:1025px){
+  .navbar-nav{
+    background-color:  inherit !important;
+  }
 }
 </style>

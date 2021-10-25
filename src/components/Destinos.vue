@@ -1,12 +1,12 @@
 <template>
   <div>
-      <section class="main2">
+      <section class="main2" id="Destinos">
           <div class="container">
               <div class="row">
                   <div class="col-xl-6">
                       <div class="texto-destinos">
                           <h2>{{titulo1}}</h2>
-                          <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis ullamcorper varius purus sit amet interdum. Phasellus placerat metus a urna consequat porta</span>         
+                          <span>Conoce las características y seguridad de tu próxima aventura por el mundo</span>         
                       </div>
                       <div class="boton">
                       <router-link to="/paises" ><button>{{boton}}</button></router-link>
@@ -20,10 +20,10 @@
                                     <h2>1</h2>
                                 </div>
                                 <div class="titulo-numero">
-                                    <span>Vivamus et rhoncus est, vel . </span>
+                                    <span>Elige tu próximo destino </span>
                                 </div>
                                 <div class="contenido-numero">
-                                    <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis </span>
+                                    <span>Elige cualquier lugar del mundo</span>
                                 </div>
                             </div>
                         </div>
@@ -33,10 +33,10 @@
                                     <h2>2</h2>
                                 </div>
                                 <div class="titulo-numero">
-                                    <span>Vivamus et rhoncus est, vel . </span>
+                                    <span>Consulta la seguridad del sitio en nuestra app</span>
                                 </div>
                                 <div class="contenido-numero">
-                                    <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis </span>
+                                    <span>Consulta en nuestra app todo lo que necesitas saber sobre tu próxima aventura</span>
                                 </div>
                             </div>
                         </div>
@@ -48,10 +48,10 @@
                                     <h2>3</h2>
                                 </div>
                                 <div class="titulo-numero">
-                                    <span>Vivamus et rhoncus est, vel . </span>
+                                    <span>Elige una fecha </span>
                                 </div>
                                 <div class="contenido-numero">
-                                    <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis </span>
+                                    <span>Elige la mejor época para viajar </span>
                                 </div>
                             </div>
                         </div>
@@ -61,10 +61,10 @@
                                     <h2>4</h2>
                                 </div>
                                 <div class="titulo-numero">
-                                    <span>Vivamus et rhoncus est, vel . </span>
+                                    <span>Disfruta </span>
                                 </div>
                                 <div class="contenido-numero">
-                                    <span>Vivamus et rhoncus est, vel viverra ipsum. Donec vulputate condimentum risus vel viverra. Duis </span>
+                                    <span>Y ahora que  has llegado hasta aquí disfruta de tu aventura lo máximo posible  ¡Te lo mereces!</span>
                                 </div>
                             </div>
                         </div>
@@ -177,6 +177,30 @@ data() {
     .main2{
         height: 95rem;
     }
+}
+@media screen and (min-width:701px) and (max-width:1024px){
+      .texto-destinos{
+      text-align: center;
+  }
+  .tarjeta-destino{
+      width: 75%;
+      margin: auto;
+      margin-top: 2rem;
+      text-align: center;
+  }
+  .tarjeta-destino2{
+      width: 75%;
+      margin: auto;
+      margin-top: 2rem;
+      text-align: center;
+  }
+  .numero h2{
+      margin: auto;
+  }
+  .main2{
+      height: 150vh;
+  }
+
 }
 
 </style>

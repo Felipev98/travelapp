@@ -1,10 +1,11 @@
 <template>
   <div>
       <div class="full-height" id="banner">
-  <b-navbar toggleable="lg" >
+  <b-navbar toggleable="lg" class="navbar-dark" >
       <b-container>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-navbar-brand id="logo" to="/">LOGO</b-navbar-brand>
+     <b-collapse id="nav-collapse" class="justify-content-end" is-nav>
+          </b-collapse>
       </b-container>
         </b-navbar>
         </div>
@@ -88,17 +89,17 @@
                              <div class="row">
                                  <div class="col-xl-6">
                             <div class="info water mb-4">
-                        <i class="bi bi-map-fill"></i>                            
-                        <span>Neighbors</span>
+                                <i class="bi bi-map-fill"></i>                            
+                                <span>Neighbors</span>
                             <div v-for="neigh in neightboor" :key="neigh.id">
                                 <span>{{neigh.name}}</span>
                             </div>
                             </div>
                             </div>
                             <div class="col-xl-6">
-                            <div class="info water">
-                            <i class="bi bi-lightning-fill"></i>
-                            <span>Electricity</span>
+                                <div class="info water">
+                                <i class="bi bi-lightning-fill"></i>
+                                <span>Electricity</span>
                             <div v-for="electricity in Electricity " :key="electricity.id">
                                 <span>{{electricity}}</span>
                             </div>
@@ -273,5 +274,20 @@ a{
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+}
+@media screen and (min-width:701px) and (max-width:1024px){
+    .titulo-pais h2{
+        text-align: center;
+    }
+    .imagen--{
+        text-align: center;
+    }
+    .info{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    }
+    #colum-2{
+        margin-top: 1rem;
+    }
 }
 </style>

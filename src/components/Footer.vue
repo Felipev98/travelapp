@@ -10,7 +10,7 @@
               </div>
               <div class="col-xl-3">
                   <div class="logo">
-                      <h2>LOGO</h2>
+                      <h2>SECCIÓN 1</h2>
                       <span class="seccion-footer">sección1</span>
                       <span class="seccion-footer">seccion2</span>
                       <span class="seccion-footer">seccion3</span>
@@ -18,7 +18,7 @@
               </div>
               <div class="col-xl-3">
                   <div class="logo">
-                      <h2>LOGO</h2>
+                      <h2>SECCIÓN 2</h2>
                         <span class="seccion-footer">sección1</span>
                       <span class="seccion-footer">seccion2</span>
                       <span class="seccion-footer">seccion3</span>
@@ -26,7 +26,7 @@
               </div>
               <div class="col-xl-3">
                   <div class="logo">
-                      <h2>LOGO</h2>
+                      <h2>SECCIÓN 3</h2>
                         <span class="seccion-footer">sección1</span>
                       <span class="seccion-footer">seccion2</span>
                       <span class="seccion-footer">seccion3</span>
@@ -75,6 +75,15 @@ export default {
         margin-top: 2rem;
     }
     .texto-banner{
+        margin-top: 2rem;
+    }
+}
+@media screen and (min-width:701px) and (max-width:1024px){
+    .footer{
+        height: 29rem;
+        text-align: center;
+    }
+    .logo{
         margin-top: 2rem;
     }
 }

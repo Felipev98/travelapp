@@ -5,6 +5,7 @@ import store from './store'
 import './assets/custom.scss'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import 'animate.css';
 import Vuelidate from 'vuelidate'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 Vue.use(BootstrapVue,IconsPlugin)

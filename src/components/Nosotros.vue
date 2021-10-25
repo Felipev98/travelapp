@@ -24,25 +24,27 @@
               <div class="col-xl-6">
                   <div class="texto-nosotros">
                       <h2>{{titulo}}</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur dunt, unc malesuada.</p>
-                      <p>Nos dedicamos a:</p>
+                      <p> Somos una agencia dedicada a promover información de turismo receptivo y emisivo desde y hacia todas partes.</p>
+                      <p>Nuestros valores:</p>
                   </div>
                   <div class="nosotros-beneficios">
                       <div class="row">
                           <div class="col-xl-6" id="col-la">
                               <i class="bi bi-heart-fill"></i>
-                              <span class="beneficios-block">corajon</span>
+                              <span class="beneficios-block">Amor</span>
                               <div class="texto-2">
                                 <i class="bi bi-person-check-fill"></i>
-                            <span class="beneficios-block">corajon</span>
+                            <span class="beneficios-block">Bondad</span>
                               </div>
                           </div>
                           <div class="col-xl-6">
+                              <div class="texto">
                             <i class="bi bi-hand-thumbs-up-fill"></i>                              
-                            <span>corajon</span>
+                            <span>Receptividad</span>
                              <div class="texto-2">
                                 <i class="bi bi-hammer"></i>
-                                <span class="beneficios-block">corajon</span>
+                                <span class="beneficios-block">Trabajo duro</span>
+                              </div>
                               </div>
                           </div>
                       </div>
@@ -59,7 +61,7 @@
                         <div class="col-xl-6">
                             <div class="texto-tarjeta">
                                 <h2>Satisfacción</h2>
-                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis orci at congue condimentum</span>
+                                <span>Queremos que siempre conozcas que tan seguro es tu próxima aventura.</span>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -205,6 +207,38 @@ width: 13rem;
 .elipse-destinos-down img{
     width: 20rem;
 }
+.nosotros span{
+    padding-left: 0.8rem;
+}
+@media screen and (min-width:701px) and (max-width:1024px){
+    .texto-nosotros{
+    text-align: center;
+  }
+  #col-la{
+      border-right:none;
+      width:100%;
+  }
+  .nosotros-beneficios{
+      text-align: center;
+  }
+  .nosotros span{
+      padding-left: 0.8rem;
+  }
+  .imagen-horizonte{
+      padding-top: 1rem;
+  }
+  .tarjeta{
+      height: 11rem;
+  }
+  .smile-face{
+      text-align: right;
+      position: relative;
+      top: -7rem;
+  }
+  .nosotros{
+      height: 90vh;
+  }
+}
 @media screen and (max-width:700px){
     .imagen-horizonte img{
   width: 100% ;
@@ -239,7 +273,19 @@ width: 13rem;
 .texto-nosotros p{
     font-size: 0.9rem;
 }
+#col-la{
+    width: 100%;
+    border-right: none;
+    text-align: center;
 }
+.texto{
+    text-align: center;
+}
+.nosotros span{
+    padding-left: 1rem;
+}
+}
+
 @media screen and (min-width:320px) and (max-width:360px){
 .nosotros {
     height: 142vh;
